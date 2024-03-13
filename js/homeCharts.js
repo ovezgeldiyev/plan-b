@@ -132,6 +132,7 @@ const createChart = (data) => {
           },
         },
       },
+      responsive: true,
     },
   });
 };

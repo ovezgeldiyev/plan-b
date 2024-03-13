@@ -314,21 +314,62 @@
     &__btns {
       display: flex;
       align-items: center;
+      background: #f8f8f8;
+      border-radius: 50px;
+      padding: 2px;
+      box-sizing: border-box;
+      width: 100%;
     }
     &__btn {
-      width: 65px;
+      width: 25%;
+      box-sizing: border-box;
+      padding: 4px;
+      border-radius: 50px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #1b2430;
+      text-align: center;
       cursor: pointer;
+      @include transition;
       &.active {
         background: #3cb2d9;
+        color: $white;
       }
     }
     &__chart {
       height: 172px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       &.hidden {
         display: none;
       }
     }
     &__nodata {
+      .button {
+        box-sizing: border-box;
+        width: 100%;
+      }
+      &-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: "Inter";
+        font-weight: 400;
+        min-height: 122px;
+        font-size: 12px;
+        line-height: 16px;
+        color: #259bc2;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 12px;
+      }
       &.hidden {
         display: none;
       }

@@ -1417,19 +1417,79 @@ p.sm {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #f8f8f8;
+  border-radius: 50px;
+  padding: 2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
 }
 .homeChart__btn {
-  width: 65px;
+  width: 25%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 4px;
+  border-radius: 50px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1b2430;
+  text-align: center;
   cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
 }
 .homeChart__btn.active {
   background: #3cb2d9;
+  color: #fff;
 }
 .homeChart__chart {
   height: 172px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .homeChart__chart.hidden {
   display: none;
+}
+.homeChart__nodata .button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+}
+.homeChart__nodata-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Inter";
+  font-weight: 400;
+  min-height: 122px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #259bc2;
+}
+.homeChart__nodata svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 12px;
 }
 .homeChart__nodata.hidden {
   display: none;
