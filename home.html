@@ -323,7 +323,31 @@
               <div class="homeChart__price">
                 <h4>$5.45</h4>
               </div>
-              <canvas id="myChart"></canvas>
+              <div class="homeChart__btns">
+                <button
+                  type="button"
+                  class="homeChart__btn active"
+                  data-data="1"
+                >
+                  7d
+                </button>
+                <button type="button" class="homeChart__btn" data-data="2">
+                  14d
+                </button>
+                <button type="button" class="homeChart__btn" data-data="3">
+                  30d
+                </button>
+                <button type="button" class="homeChart__btn" data-data="4">
+                  90d
+                </button>
+                <button type="button" class="homeChart__btn" data-data="5">
+                  1y
+                </button>
+              </div>
+              <div class="homeChart__chart">
+                <canvas id="myChart"></canvas>
+              </div>
+              <div class="homeChart__nodata hidden">No data availiable</div>
             </div>
             <div class="homeProviders">
               <div class="homeProviders__title">
@@ -468,75 +492,6 @@
     <script src="./js/slick.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/sliders.js"></script>
-    <script>
-      const ctx = document.getElementById("myChart");
-
-      new Chart(ctx, {
-        type: "line",
-        plugins: {
-          legend: {
-            // display: false,
-            align: "start",
-            labels: {
-              boxWidth: 20,
-              boxHeight: 0,
-              padding: 10,
-              font: "Quicksand",
-            },
-          },
-
-          tooltip: {
-            callbacks: {
-              title: () => null,
-              label: function (tooltipItem) {
-                if (props.percentage) {
-                  let sum = 0;
-                  let dataArr = tooltipItem.dataset.data;
-                  dataArr.map((data) => {
-                    sum += Number(data);
-                  });
-                  let percentage =
-                    ((tooltipItem.parsed.y * 100) / sum).toFixed(2) + "%";
-                  return `${percentage}`;
-                } else {
-                  var tooltipText = "";
-                  if (tooltipItem.dataset.data[tooltipItem.dataIndex] != null)
-                    tooltipText =
-                      tooltipItem.dataset.data[
-                        tooltipItem.dataIndex
-                      ].toString();
-                  return tooltipText;
-                }
-              },
-              labelTextColor: function (context) {
-                return "#000D57";
-              },
-            },
-            displayColors: false,
-            backgroundColor: "#FAFFFA",
-            borderColor: "rgba(16, 38, 32, 0.15)",
-            borderWidth: 1,
-            yAlign: "bottom",
-          },
-        },
-        data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
-          datasets: [
-            {
-              label: "",
-              data: [0, 0.5, 1.0, 1.5, 2.0],
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-    </script>
+    <script src="./js/homeCharts.js"></script>
   </body>
 </html>

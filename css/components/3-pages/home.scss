@@ -298,7 +298,7 @@
         background-color: $red50;
         color: $red500;
         svg {
-            transform: scaleY(-1);
+          transform: scaleY(-1);
         }
       }
       svg {
@@ -310,6 +310,28 @@
     }
     &__price {
       margin-bottom: 12px;
+    }
+    &__btns {
+      display: flex;
+      align-items: center;
+    }
+    &__btn {
+      width: 65px;
+      cursor: pointer;
+      &.active {
+        background: #3cb2d9;
+      }
+    }
+    &__chart {
+      height: 172px;
+      &.hidden {
+        display: none;
+      }
+    }
+    &__nodata {
+      &.hidden {
+        display: none;
+      }
     }
   }
 }

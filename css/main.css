@@ -1410,6 +1410,30 @@ p.sm {
 .homeChart__price {
   margin-bottom: 12px;
 }
+.homeChart__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.homeChart__btn {
+  width: 65px;
+  cursor: pointer;
+}
+.homeChart__btn.active {
+  background: #3cb2d9;
+}
+.homeChart__chart {
+  height: 172px;
+}
+.homeChart__chart.hidden {
+  display: none;
+}
+.homeChart__nodata.hidden {
+  display: none;
+}
 
 @media (max-width: 1024px) {
   ::-webkit-scrollbar {
