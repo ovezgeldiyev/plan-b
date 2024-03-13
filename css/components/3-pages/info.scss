@@ -1,0 +1,208 @@
+.info {
+  background-color: $gray50;
+  &Step {
+    display: none;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 40px;
+    &.active {
+      display: flex;
+    }
+    &__progress {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      pointer-events: none;
+      span {
+        display: block;
+        width: calc(25% - 8px);
+        height: 6px;
+        background-color: $gray100;
+        border-radius: 100px;
+        transition: 0.3s ease;
+        &.active {
+          background-color: $green-brand500;
+        }
+      }
+    }
+    &__head {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+    }
+    &__back {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background-color: transparent;
+      &:hover {
+        svg {
+          color: $main;
+        }
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+        transition: 0.3s ease;
+        color: $gray500;
+      }
+    }
+    &__title {
+      margin-bottom: 30px;
+      h3 {
+        margin-bottom: 12px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    &__radios {
+      display: flex;
+      flex-direction: column;
+    }
+    &__image {
+      position: relative;
+      width: 100%;
+      padding-bottom: 140%;
+      border-radius: 12px;
+      overflow: hidden;
+      &-wrapper {
+        width: 100%;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        opacity: 0.45;
+        transition: 0.3s ease;
+        z-index: 1;
+      }
+      &-check {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        background-color: $green50;
+        border-radius: 50%;
+        img {
+          width: 57%;
+        }
+      }
+      & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include fullImage;
+      }
+    }
+    &__foot {
+      margin: auto auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding-top: 40px;
+      width: 100%;
+      max-width: 540px;
+      .button {
+        width: 100%;
+        margin-bottom: 16px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+  &Item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: $white;
+    box-shadow: 0px 36px 14px rgba(219, 219, 219, 0.01),
+      0px 20px 12px rgba(219, 219, 219, 0.05),
+      0px 9px 9px rgba(219, 219, 219, 0.09),
+      0px 2px 5px rgba(219, 219, 219, 0.1);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    position: relative;
+    &:last-child {
+      margin: 0;
+    }
+    &__icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      img {
+        width: 100%;
+      }
+    }
+    h5 {
+      width: calc(100% - 32px);
+    }
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      &:checked {
+        & ~ span {
+          opacity: 1;
+        }
+      }
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      border: 1px solid $primary;
+      transition: 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+// 750px
+@mixin info-sm-md {
+  .info {
+    &Step {
+      &__progress {
+        padding: 8px 0;
+        span {
+          height: 4px;
+        }
+      }
+      &__title {
+        h3 {
+          margin-bottom: 6px;
+        }
+        margin-bottom: 16px;
+      }
+    }
+    &Item {
+      margin-bottom: 16px;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.setting {
+  background-color: $gray50;
+  &__inner {
+    min-height: 100vh;
+    padding: 16px 0 120px;
+  }
+  &__back {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 100%;
+      height: 100%;
+      color: $gray500;
+      transition: 0.3s ease;
+    }
+  }
+  &__head {
+    padding: 16px 0;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &.center {
+      justify-content: center;
+    }
+  }
+  &__content {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $gray100;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    .input {
+      &__outer {
+        width: 100%;
+        margin-bottom: 16px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+  &__foot {
+    display: flex;
+    flex-direction: column;
+  }
+  &Item {
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: $white;
+    box-shadow: 0px 36px 14px rgba(219, 219, 219, 0.01),
+      0px 20px 12px rgba(219, 219, 219, 0.05),
+      0px 9px 9px rgba(219, 219, 219, 0.09),
+      0px 2px 5px rgba(219, 219, 219, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:last-child {
+      margin: 0;
+    }
+    &:hover {
+      opacity: 1;
+      .setting {
+        &Item {
+          &__arrow {
+            svg {
+              color: $main;
+            }
+          }
+        }
+      }
+    }
+    &__name {
+      width: calc(100% - 50px);
+      display: flex;
+      align-items: center;
+    }
+    &__icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      img {
+        width: 100%;
+      }
+    }
+    &__arrow {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 100%;
+        height: 100%;
+        transform: scaleX(-1);
+        color: $gray500;
+        transition: 0.3s ease;
+      }
+    }
+    p {
+      color: $main;
+      font-weight: 400;
+    }
+  }
+}
+// 750px
+@mixin setting-sm-md {
+  .setting {
+    &__inner {
+      padding: 8px 0 90px;
+    }
+  }
+}

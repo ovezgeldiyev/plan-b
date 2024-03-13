@@ -1,36 +1,201 @@
 h1 {
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 85px;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  color: $main;
 }
 
 h2 {
-
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  color: $main;
 }
 
 h3 {
-
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: $main;
 }
 
 h4 {
-
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: $main;
 }
 
 h5 {
-
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: $main;
 }
 
 h6 {
-
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: $main;
 }
 p {
-
+  &.sm {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.caption {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
 }
 .main {
-    overflow: hidden;
+  overflow: hidden;
 }
 .button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: $mainFont;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 12px;
+
+  &.primary {
+    background-color: $primary;
+    color: $white;
+    padding: 14px 20px;
+    &:disabled {
+      color: $gray300;
+      background-color: $gray100;
+      pointer-events: none;
+    }
+    &:hover {
+      opacity: 1;
+      background-color: $blue700;
+    }
+  }
+  &.secondary {
+    color: $main;
+    background-color: $white;
+    border: 1px solid $gray100;
+    padding: 14px 20px;
+    &:disabled {
+      color: $gray300;
+      background-color: $gray100;
+      pointer-events: none;
+    }
+    &:hover {
+      opacity: 1;
+      background-color: $gray100;
+    }
+  }
+  &.uniq {
+    color: $red700;
+    background-color: $white;
+    border: 1px solid $gray100;
+    padding: 14px 20px;
+    &:hover {
+      opacity: 1;
+      background-color: $white;
+    }
+  }
+  &.set {
+    color: $blue700;
+    background-color: $white;
+    border: 1px solid $blue700;
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    &:hover {
+      opacity: 1;
+      background-color: $blue700;
+      color: $white;
+    }
+  }
+}
+.input {
+  display: flex;
+  &__outer {
+    display: block;
+    .caption {
+      color: $gray500;
+      margin-bottom: 8px;
+    }
+  }
+  input {
+    width: 100%;
+    height: 100%;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $main;
+    background-color: $white;
+    border-radius: 12px;
+    border: 1px solid $gray100;
+    transition: 0.3s ease;
+    padding: 12px 16px;
+    &::placeholder {
+      color: $gray500;
+    }
+    &:focus {
+      border-color: $primary;
+    }
+  }
+}
+.check {
+  display: flex;
+  width: 40px;
+  height: 24px;
+  position: relative;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    &:checked {
+      & ~ span {
+        background-color: $primary;
+        &::before {
+          transform: translate(16px, -50%);
+        }
+      }
+    }
+  }
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 77px;
+    background-color: rgba(#787880, 0.16);
+    transition: 0.3s ease;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0px 0px 0px 0.774194px rgba(0, 0, 0, 0.04),
+        0px 2.32258px 6.19355px rgba(0, 0, 0, 0.15),
+        0px 2.32258px 0.774194px rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease;
+      transform: translateY(-50%);
+      content: "";
+    }
+  }
 }

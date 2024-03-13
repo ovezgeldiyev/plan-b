@@ -1,59 +1,223 @@
 .hero {
-    &__inner {
-
+  position: relative;
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background-color: $white;
+      opacity: 0.2;
     }
+    img {
+      @include fullImage;
+    }
+  }
+  &__inner {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-logo {
+      width: 100%;
+      max-width: 340px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 // 1380px
 @mixin hero-xxxlg-xxxxlg {
-    .hero {
-
-    }
+  .hero {
+  }
 }
 // 1250px
 @mixin hero-xlg-xxlg-extra {
-    .hero {
-
-    }
+  .hero {
+  }
 }
 // 1180px
 @mixin hero-xlg-xxlg {
-    .hero {
-
-    }
+  .hero {
+  }
 }
 // 1024px
 @mixin hero-lg-xlg {
-    .hero {
-
-    }
+  .hero {
+  }
 }
 // 930px
 @mixin hero-md-lg {
-    .hero {
-  
-    }
+  .hero {
+  }
 }
 // 750px
 @mixin hero-sm-md {
-    .hero {
- 
-    }
+  .hero {
+  }
 }
 // 650px
 @mixin hero-sm-md-extra {
-    .hero {
-
-    }
+  .hero {
+  }
 }
 // 540px
 @mixin hero-xsm-sm {
-    .hero {
-
-    }
+  .hero {
+  }
 }
 // 440px
 @mixin hero-xxsm-xsm {
-    .hero {
+  .hero {
+  }
+}
+.welcome {
+  &__inner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0 40px;
 
+    &-logo {
+      width: 130px;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+      }
     }
+    &-slider {
+      padding-bottom: 24px;
+      position: relative;
+      margin: 0 -10px;
+    }
+    &-title {
+      padding: 24px 0 40px;
+      h3 {
+        margin-bottom: 4px;
+      }
+    }
+    &-foot {
+      margin: auto auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 540px;
+      .button {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+      p {
+        display: flex;
+        align-items: center;
+        b {
+          font-weight: 400;
+        }
+        a {
+          font-weight: 500;
+          color: $primary;
+          margin-left: 8px;
+          &:hover {
+            opacity: 1;
+            color: $blue700;
+          }
+        }
+      }
+    }
+    .slick {
+      &-track {
+        display: flex !important;
+      }
+      &-slide {
+        height: unset !important;
+        margin: 0 10px;
+      }
+      &-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        li {
+          width: 8px;
+          height: 8px;
+          padding: 0;
+          display: flex;
+          border-radius: 50%;
+          background-color: $gray300;
+          transition: 0.3s ease;
+          margin: 0 8px;
+          &.slick-active {
+            background-color: $main;
+          }
+          button {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &Item {
+    position: relative;
+    display: flex !important;
+    &__inner {
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      min-height: 398px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      h4 {
+        position: relative;
+        z-index: 2;
+        color: $white;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include fullImage;
+        border-radius: 12px;
+      }
+    }
+  }
+}
+// 750px
+@mixin welcome-sm-md {
+  .welcome {
+    &__inner {
+      &-logo {
+        width: 98px;
+        margin-bottom: 8px;
+      }
+      &-slider {
+        padding-bottom: 16px;
+      }
+    }
+  }
 }
