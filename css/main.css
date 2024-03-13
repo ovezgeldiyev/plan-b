@@ -1444,7 +1444,6 @@ p.sm {
   .auto__container {
     padding: 0 16px;
   }
-
   .navItem__icon {
     width: 32px;
     height: 32px;
@@ -1453,7 +1452,6 @@ p.sm {
     font-size: 10px;
     line-height: 12px;
   }
-
   .welcome__inner-logo {
     width: 98px;
     margin-bottom: 8px;
@@ -1461,7 +1459,6 @@ p.sm {
   .welcome__inner-slider {
     padding-bottom: 16px;
   }
-
   .infoStep__progress {
     padding: 8px 0;
   }
@@ -1477,11 +1474,9 @@ p.sm {
   .infoItem {
     margin-bottom: 16px;
   }
-
   .setting__inner {
     padding: 8px 0 90px;
   }
-
   .home__inner {
     padding: 16px 0 90px;
   }
