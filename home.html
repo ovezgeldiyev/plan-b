@@ -11,6 +11,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/main.css" />
+    https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js
+
     <title>Home</title>
   </head>
 
@@ -319,10 +321,9 @@
                 </div>
               </div>
               <div class="homeChart__price">
-                <h4>
-                    $5.45
-                </h4>
+                <h4>$5.45</h4>
               </div>
+              <canvas id="myChart"></canvas>
             </div>
             <div class="homeProviders">
               <div class="homeProviders__title">
@@ -462,9 +463,80 @@
     </svg>
     <!-- js
     =========================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/jquery.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/sliders.js"></script>
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "line",
+        plugins: {
+          legend: {
+            // display: false,
+            align: "start",
+            labels: {
+              boxWidth: 20,
+              boxHeight: 0,
+              padding: 10,
+              font: "Quicksand",
+            },
+          },
+
+          tooltip: {
+            callbacks: {
+              title: () => null,
+              label: function (tooltipItem) {
+                if (props.percentage) {
+                  let sum = 0;
+                  let dataArr = tooltipItem.dataset.data;
+                  dataArr.map((data) => {
+                    sum += Number(data);
+                  });
+                  let percentage =
+                    ((tooltipItem.parsed.y * 100) / sum).toFixed(2) + "%";
+                  return `${percentage}`;
+                } else {
+                  var tooltipText = "";
+                  if (tooltipItem.dataset.data[tooltipItem.dataIndex] != null)
+                    tooltipText =
+                      tooltipItem.dataset.data[
+                        tooltipItem.dataIndex
+                      ].toString();
+                  return tooltipText;
+                }
+              },
+              labelTextColor: function (context) {
+                return "#000D57";
+              },
+            },
+            displayColors: false,
+            backgroundColor: "#FAFFFA",
+            borderColor: "rgba(16, 38, 32, 0.15)",
+            borderWidth: 1,
+            yAlign: "bottom",
+          },
+        },
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+          datasets: [
+            {
+              label: "",
+              data: [0, 0.5, 1.0, 1.5, 2.0],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
   </body>
 </html>
